@@ -62,8 +62,8 @@ h2.form-title{
   clear: both;
 }
 
-.sign-in-up-link{
-  clear: both;
-  margin-top: 8px;
+.errors li {
+  list-style: none;
+  color: #CC0000;
+  margin-left: 15px;
 }
-
