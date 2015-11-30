@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   
   get 'help'                            => 'general_pages#help'
   
-  get 'jobs/index'
-  get 'jobs/new'
-  get 'jobs/show'
+  get 'jobs'                            => 'jobs#index'
+  get 'jobs/new'                        => 'jobs#new'
+  get 'job/:id'                         => 'jobs#show'
+  post 'jobs'                           => 'jobs#create'
 
 end

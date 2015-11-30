@@ -1,0 +1,58 @@
+/* formpage styles */
+
+h2.form-title{
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.wide-form{
+  width: 95%;
+  margin-left: 2.5%;
+  
+  label{
+    margin-left: 5px
+  }
+  
+  input, textarea{
+    width: 100%;
+    border-radius: 2px;
+  }
+  
+  textarea{
+    height: 80px;
+  }
+  
+  .sub-form{
+    width: 45%;
+    float: left;
+    margin: 2.5%;
+  }
+  
+  .sub-menu-button{
+    margin: 5px;
+  }
+  
+  input[type="file"]{
+    width: 300px;
+    border: 1px solid #000;
+  }
+  
+  input[type="submit"]{
+    width: 150px;
+    color: #fff;
+    background-color: #0066FF;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    float: left;
+    clear: both;
+    &:hover{
+      background-color: #E6E6E6;
+      color: #000;
+    }
+  }
+}
+
+.sign-in-up-link{
+  clear: both;
+  margin-top: 8px;
+}
