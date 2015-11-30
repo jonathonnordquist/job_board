@@ -13,6 +13,28 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
     
+    <div id="radio-area">
+      <div class="radio_buttons">
+        <%= f.label :category, "Full-time" %>
+        <%= f.radio_button :category, "full-time" %>
+      </div>
+      
+      <div class="radio_buttons">
+        <%= f.label :category, "Part-time" %>
+        <%= f.radio_button :category, "part-time" %>
+      </div>
+      
+      <div class="radio_buttons">
+        <%= f.label :category, "Contract" %>
+        <%= f.radio_button :category, "contract" %>
+      </div>
+      
+      <div class="radio_buttons">
+        <%= f.label :category, "Freelance" %>
+        <%= f.radio_button :category, "freelance" %>
+      </div>
+    </div>
+    
     <%= f.submit "Create Job" %>
   
   <% end %>

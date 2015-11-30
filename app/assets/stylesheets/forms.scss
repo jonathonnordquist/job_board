@@ -37,6 +37,10 @@ h2.form-title{
     border: 1px solid #000;
   }
   
+  input[type="radio"]{
+    width: auto;
+  }
+  
   input[type="submit"]{
     width: 150px;
     color: #fff;
@@ -52,7 +56,14 @@ h2.form-title{
   }
 }
 
+.radio_buttons {
+  display: inline-block;
+  margin-right: 20px;
+  clear: both;
+}
+
 .sign-in-up-link{
   clear: both;
   margin-top: 8px;
 }
+
