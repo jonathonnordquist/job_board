@@ -2,12 +2,16 @@
 
 <h1>All available jobs</h1>
 
-<ul>
+<ul id="job-list">
   <% @jobs.each do |job| %>
     <%= link_to job_path(job.id) do %>
-      <div class="job-cell">
-        <%= job.title %>
-      </div>
+      <li>
+        <div class="job-cell">
+          <p class="job-title"><%= job.title %></p>
+          <p class="job-comp">Company: <%= job.company %></p>
+          <p class="job-date">Posted: <%= job.created_at.strftime("%B %-d, %Y") %></p>
+        </div>        
+      </li>
     <% end %>
   <% end %>
   
