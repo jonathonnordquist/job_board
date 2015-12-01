@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  layout "jobs"
+  
   def index
     @jobs = Job.all
   end
