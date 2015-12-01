@@ -15,12 +15,19 @@
   }
 }
 
-.navbar-fixed-top {
-  margin-bottom: none;
+.navbar {
+  display: block;
+}
+
+.navbar-fixed-top .container{
+  margin-bottom: 0;
+  height: 50px;
+  a{
+    height: 50px;
+  }
 }
 
 .cat-header {
-  margin-top: 50px;
   height: 40px;
   background: #B8B8B8;
   border: none;
@@ -39,12 +46,34 @@
         a {
           color: #000;
           text-decoration: none;
-          
         }
       }  
     }
+  }
+}
+
+.gen-header {
+  height: 50px;
+  background: #000;
+  border: none;
+  nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      line-height: 40px;
+      li {
+        :hover {
+          background-color: #000;
+        }
+        a {
+          color: #fff;
+          &:hover {
+            color: #ddd;
+          }
+        }
+
+      }
+    }
     
   }
-  
-  
 }
