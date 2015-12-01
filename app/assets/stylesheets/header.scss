@@ -14,3 +14,37 @@
     text-decoration: none;
   }
 }
+
+.navbar-fixed-top {
+  margin-bottom: none;
+}
+
+.cat-header {
+  margin-top: 50px;
+  height: 40px;
+  background: #B8B8B8;
+  border: none;
+  nav {
+    
+    ul {
+      padding: 0;
+      margin: 0;
+      line-height: 40px;
+      li {
+        display: inline-block;
+        list-style: none;
+        width: 24.7%;
+        text-align: center;
+        font-size: 1.3em;
+        a {
+          color: #000;
+          text-decoration: none;
+          
+        }
+      }  
+    }
+    
+  }
+  
+  
+}
