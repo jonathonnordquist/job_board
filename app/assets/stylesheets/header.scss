@@ -27,27 +27,29 @@
   }
 }
 
-.cat-header {
-  height: 40px;
-  background: #B8B8B8;
+.cat-header, .gen-header {
   border: none;
   nav {
-    
     ul {
       padding: 0;
       margin: 0;
       line-height: 40px;
-      li {
-        display: inline-block;
-        list-style: none;
-        width: 24.7%;
-        text-align: center;
-        font-size: 1.3em;
-        a {
-          color: #000;
-          text-decoration: none;
-        }
-      }  
+    }  
+  }
+}
+
+.cat-header {
+  height: 40px;
+  background: #B8B8B8;
+  li {
+    display: inline-block;
+    list-style: none;
+    width: 24.7%;
+    text-align: center;
+    font-size: 1.3em;
+    a {
+      color: #000;
+      text-decoration: none;
     }
   }
 }
@@ -55,25 +57,17 @@
 .gen-header {
   height: 50px;
   background: #000;
-  border: none;
   nav {
-    ul {
-      padding: 0;
-      margin: 0;
-      line-height: 40px;
-      li {
-        :hover {
-          background-color: #000;
+    li {
+      :hover {
+        background-color: #000;
+      }
+      a {
+        color: #fff;
+        &:hover {
+          color: #ddd;
         }
-        a {
-          color: #fff;
-          &:hover {
-            color: #ddd;
-          }
-        }
-
       }
     }
-    
   }
 }
