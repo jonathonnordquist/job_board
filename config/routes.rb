@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   
   get 'help'                            => 'general_pages#help'
   
-  get 'jobs'                            => 'jobs#index'
-  get 'jobs/new'                        => 'jobs#new'
-  get 'job/:id'                         => 'jobs#show'
-  post 'jobs'                           => 'jobs#create'
+  resources 'jobs'
+  
+  # get 'jobs'                            => 'jobs#index'
+  # get 'job/new'                         => 'jobs#new'
+  # get 'job/:id'                         => 'jobs#show'
+  # post 'job'                            => 'jobs#create'
 
 end

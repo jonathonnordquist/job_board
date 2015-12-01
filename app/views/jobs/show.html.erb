@@ -1,2 +1,6 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<% provide(:title, formatted_title("#{ @job.title } created")) %>
+
+<h1>Job Created</h1>
+<p><%= @job.title %></p>
+
+

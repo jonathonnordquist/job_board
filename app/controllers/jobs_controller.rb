@@ -10,13 +10,15 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     
     if @job.save
-      
+      flash[:success] = "Job has been posted successfully"
+      redirect_to @job
     else
       render 'new'
     end
   end
 
   def show
+    @job = Job.find(params[:id])
   end
   
   private
