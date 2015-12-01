@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   
   resources 'jobs'
   
-  # get 'jobs'                            => 'jobs#index'
-  # get 'job/new'                         => 'jobs#new'
-  # get 'job/:id'                         => 'jobs#show'
-  # post 'job'                            => 'jobs#create'
+  get 'job/ft'                             => 'jobs#full_time'
+  get 'job/pt'                             => 'jobs#part_time'
+  get 'job/cont'                           => 'jobs#contract'
+  get 'job/fl'                             => 'jobs#free_lance'
 
 end

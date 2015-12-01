@@ -4,6 +4,26 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
   end
+  
+  def full_time
+    @jobs = Job.where(category: "full-time")
+    render 'jobs/index'
+  end
+  
+  def part_time
+    @jobs = Job.where(category: "part-time")
+    render 'jobs/index'
+  end
+  
+  def contract
+    @jobs = Job.where(category: "contract")
+    render 'jobs/index'
+  end
+  
+  def free_lance
+    @jobs = Job.where(category: "freelance")
+    render 'jobs/index'
+  end
 
   def new
     @job = Job.new
