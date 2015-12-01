@@ -1,2 +1,14 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<%= provide(:title, formatted_title("All Jobs")) %>
+
+<h1>All available jobs</h1>
+
+<ul>
+  <% @jobs.each do |job| %>
+    <%= link_to job_path(job.id) do %>
+      <div class="job-cell">
+        <%= job.title %>
+      </div>
+    <% end %>
+  <% end %>
+  
+</ul>
