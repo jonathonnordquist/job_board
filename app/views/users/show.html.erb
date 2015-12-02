@@ -1,2 +1,4 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% provide(:title, formatted_title("#{@user.name} Account")) %>
+
+<h1><%= @user.name %> Account</h1>
+<p>Email: <%= @user.email %></p>
