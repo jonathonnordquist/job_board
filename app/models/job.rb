@@ -6,4 +6,5 @@ class Job < ActiveRecord::Base
   validates :company, presence: true, length: {maximum: 50 }
   validates :category, presence: true, 
                       inclusion: { in: %w(part-time full-time contract freelance) }
+  validates :user_id, presence: true
 end
