@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'general_pages#home'
   
-  get 'help'                            => 'general_pages#help'
+  get 'help'                               => 'general_pages#help'
   
   resources 'jobs'
   resources 'users'
@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   get 'login'                              => 'sessions#new'
   post 'login'                             => 'sessions#create'
   delete 'logout'                          => 'sessions#destroy'
+  
+  get 'apply/:id'                          => 'user_apps#new'
 
 end

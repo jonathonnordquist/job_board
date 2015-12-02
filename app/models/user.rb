@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :jobs
+  
   validates :name, presence: true, length: { maximum: 70 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
