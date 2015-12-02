@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       log_in(@user)
       redirect_to @user
     else
+      flash[:error] = "Username or password is incorrect"
       render 'new'
     end
   end
@@ -17,11 +18,5 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
   
-  private
-    def require_login
-      unless logged_in?
-        flash[:error] = "Please log in to access this page"
-        redirect_to login_path
-      end
-    end
+
 end
