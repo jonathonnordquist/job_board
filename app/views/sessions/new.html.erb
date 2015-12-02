@@ -1,0 +1,15 @@
+<% provide(:title, formatted_title("Log In")) %>
+
+<h1>Log In</h1>
+
+<div class="wide-form">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    
+    <%= f.submit "Log In" %>
+  <% end %>
+</div>
