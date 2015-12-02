@@ -16,4 +16,12 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+  
+  private
+    def require_login
+      unless logged_in?
+        flash[:error] = "Please log in to access this page"
+        redirect_to login_path
+      end
+    end
 end

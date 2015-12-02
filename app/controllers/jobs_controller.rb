@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_action :require_login, only: [:create, :new]
+  
   layout "jobs"
   
   def index
@@ -47,5 +49,12 @@ class JobsController < ApplicationController
   private
     def job_params
       params.require(:job).permit(:company, :title, :description, :category)
+    end
+
+    def require_login
+      unless logged_in?
+        flash[:error] = "Please log in to access this page"
+        redirect_to login_path
+      end
     end
 end

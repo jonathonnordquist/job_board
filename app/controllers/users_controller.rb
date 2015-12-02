@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:show]
+  before_action :correct_user, only: [:show]
+  
+  
   def new
     @user = User.new
   end
@@ -19,5 +23,17 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+    
+    def require_login
+      unless logged_in?
+        flash[:error] = "Please log in to access this page"
+        redirect_to login_path
+      end
+    end
+    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to root_path unless @user == current_user
     end
 end
