@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'help'                            => 'general_pages#help'
   
   resources 'jobs'
+  resources 'users'
   
   get 'job/ft'                             => 'jobs#full_time'
   get 'job/pt'                             => 'jobs#part_time'
