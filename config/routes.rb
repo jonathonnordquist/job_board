@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'login'                             => 'sessions#create'
   delete 'logout'                          => 'sessions#destroy'
   
-  get 'apply/:id'                          => 'user_apps#new'
+  get 'apply/:id'                          => 'user_apps#new', as: 'apply'
+  post 'send_app'                          => 'user_apps#send_app', as: 'send_app'
 
 end

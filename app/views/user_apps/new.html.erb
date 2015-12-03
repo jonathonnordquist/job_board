@@ -1,1 +1,13 @@
-dsasfdafasdf
+<% provide(:title, formatted_title("Apply")) %>
+
+<div class="wide-form">
+  <%= form_for :user_apps, url: send_app_path do |f| %>
+    <%= f.hidden_field :job_id, :value => @job.id %>
+  
+    <%= f.label :application_text %>
+    <%= f.text_area :application_text %>
+    
+    <%= f.submit "Submit application" %>
+  <% end %>
+  
+</div>
