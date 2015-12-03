@@ -9,6 +9,9 @@
     <%= simple_format(@job.description) %>
   </div>
   
+  <% if logged_in? %>
+    <%= link_to "Apply for this position", apply_path(@job.id) %>
+  <% end %>
 </div>
 
 

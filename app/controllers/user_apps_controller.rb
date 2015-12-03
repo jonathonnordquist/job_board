@@ -10,7 +10,7 @@ class UserAppsController < ApplicationController
       flash[:success] = "Your application has been submitted"
       redirect_to job_path(@job.id)
     else
-      flash[:danger] = "Please enter a note as to why you would be great for this position"
+      flash.now[:danger] = "Please enter a note as to why you would be great for this position"
       render 'new'
     end
   end
