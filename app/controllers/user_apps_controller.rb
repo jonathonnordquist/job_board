@@ -5,8 +5,14 @@ class UserAppsController < ApplicationController
   
   def send_app
     @job = Job.find(app_params[:job_id])
-    UserAppMailer.apply_email(app_params).deliver_now
-    render 'new'
+    if !app_params[:application_text].empty?
+      UserAppMailer.apply_email(app_params, current_user).deliver_now
+      flash[:success] = "Your application has been submitted"
+      redirect_to job_path(@job.id)
+    else
+      flash[:danger] = "Please enter a note as to why you would be great for this position"
+      render 'new'
+    end
   end
   
   private
