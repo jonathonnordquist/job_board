@@ -47,6 +47,9 @@ group :development, :test do
   
   # Easy testing of models
   gem 'shoulda-matchers', '~> 3.0'
+  
+  # Quick creation of testing objects
+  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 group :development do
