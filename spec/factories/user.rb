@@ -15,4 +15,9 @@ FactoryGirl.define do
     name                    'Kara Thrace'
     email                   'none3@none.com'
   end
+  
+  factory :session_user, :parent => :user do
+    name                    'Gaius Baltar'
+    email                   'none4@none.com'
+  end
 end
