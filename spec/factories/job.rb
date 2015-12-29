@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :job do
-    title                             Faker::Lorem.words(5)
+    title                             Faker::Lorem.sentence(5)
     company                           Faker::Company.name
     description                       Faker::Lorem.paragraph(3)
     user_id                           1
@@ -20,5 +20,12 @@ FactoryGirl.define do
   
   factory :freelance_job, :parent => :job do
     category                          'freelance'
+  end
+  
+  factory :invalid_job, :parent => :job do
+    title                             ""
+    company                           ""
+    description                       ""
+    user_id                           ""
   end
 end

@@ -13,6 +13,12 @@ RSpec.describe JobsController, type: :controller do
       freelance_job.save
     end
   end
+  
+  after(:all) do
+    Job.all.each do |job|
+      job.destroy
+    end
+  end
     
   context 'for all users' do
     descript_base = "method renders job view passing"
@@ -61,8 +67,77 @@ RSpec.describe JobsController, type: :controller do
       
       expect(response).to have_http_status(200)
       expect(response).to render_template(:show)
-      p job[:description]
       expect(assigns(:job)[:description]).to eq(job[:description])
+    end
+  end
+  
+  context 'for logged in users' do
+    before(:all) do
+      @user = FactoryGirl.build(:jobs_user)
+      @user.save
+    end
+    
+    after(:all) do
+      User.all.each do |user|
+        user.destroy
+      end
+    end
+    
+    let(:user) { @user }
+    
+    it 'new method renders the new job view' do
+      session[:user_id] = user.id
+      get :new
+      
+      expect(response).to have_http_status(200)
+      expect(response).to render_template(:new)
+    end
+    
+    it 'create method adds a new job and redirects to the job view on success' do
+      session[:user_id] = user.id
+      job_count = Job.count
+      
+      new_job = FactoryGirl.attributes_for(:part_time_job)
+      post :create, :job => new_job
+      
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to :action => :show, :id => Job.last.id
+      expect(flash[:success]).to eq "Job has been posted successfully"
+      expect(Job.count).to eq(job_count + 1)
+    end
+    
+    it 'create method renders the new job page and does not create on failure' do
+      session[:user_id] = user.id
+      job_count = Job.count
+      
+      new_job = FactoryGirl.attributes_for(:invalid_job)
+      post :create, :job => new_job
+      
+      expect(response).to have_http_status(200)
+      expect(response).to render_template :new
+      expect(Job.count).to eq(job_count)
+    end
+  end
+  
+  context 'for non logged in user' do
+    it 'new method redirects to the log in page' do
+      get :new
+      
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to '/login'
+      expect(flash[:error]).to eq "Please log in to access this page"
+    end
+    
+    it 'create method redirects to the log in page' do
+      job_count = Job.count
+      
+      new_job = FactoryGirl.attributes_for(:part_time_job)
+      post :create, :job => new_job
+      
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to '/login'
+      expect(flash[:error]).to eq "Please log in to access this page"
+      expect(Job.count).to eq(job_count)
     end
   end
 end
