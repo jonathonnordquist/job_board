@@ -20,4 +20,16 @@ FactoryGirl.define do
     name                    'Gaius Baltar'
     email                   'none4@none.com'
   end
+  
+  factory :users_cont_user, :parent => :user do
+    name                    'Laura Roslin'
+    email                   'none5@none.com'
+  end
+  
+  factory :invalid_user, :parent => :user do
+    name                    ''
+    email                   '@none.com'
+    password                'password'
+    password_confirmation   'no_match'
+  end
 end
