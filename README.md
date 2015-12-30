@@ -35,6 +35,8 @@ Components used
 * Sass CSS
 * Bootstrap
 * ActionMailer
+* RSpec
+* ShouldaMatchers
 
 Possible future additions
 -------------------------
