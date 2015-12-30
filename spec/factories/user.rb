@@ -11,6 +11,7 @@ FactoryGirl.define do
     email                   'none2@none.com'
   end
   
+
   factory :jobs_user, :parent => :user do
     name                    'Kara Thrace'
     email                   'none3@none.com'
@@ -31,5 +32,10 @@ FactoryGirl.define do
     email                   '@none.com'
     password                'password'
     password_confirmation   'no_match'
+  end
+
+  factory :mailer_user, :parent => :user do
+    name                    'Number Six'
+    email                   'none10@none.com'
   end
 end
