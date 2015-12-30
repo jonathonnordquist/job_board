@@ -33,6 +33,7 @@ class JobsController < ApplicationController
   
   def create
     @job = Job.new(job_params)
+    @job[:user_id] = current_user[:id]
     
     if @job.save
       flash[:success] = "Job has been posted successfully"
