@@ -38,4 +38,9 @@ FactoryGirl.define do
     name                    'Number Six'
     email                   'none6@none.com'
   end
+  
+  factory :user_app_cont_user, :parent => :user do
+    name                    'Sharon Valerii'
+    email                   'none7@none.com'
+  end
 end
