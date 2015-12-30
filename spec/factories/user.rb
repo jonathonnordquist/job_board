@@ -10,4 +10,9 @@ FactoryGirl.define do
     name                    'Lee Adama'
     email                   'none2@none.com'
   end
+  
+  factory :mailer_user, :parent => :user do
+    name                    'Number Six'
+    email                   'none10@none.com'
+  end
 end
