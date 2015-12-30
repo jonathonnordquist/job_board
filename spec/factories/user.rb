@@ -36,6 +36,6 @@ FactoryGirl.define do
 
   factory :mailer_user, :parent => :user do
     name                    'Number Six'
-    email                   'none10@none.com'
+    email                   'none6@none.com'
   end
 end

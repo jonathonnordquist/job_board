@@ -5,12 +5,16 @@ RSpec.describe UserAppMailer, type: :mailer do
     user = FactoryGirl.build(:mailer_user)
     user.save
     
-    desc = "This is a description.  This is a description.  This is a description.  
-            This is a description.  This is a description.  This is a description.  
-            This is a description.  This is a description.  This is a description."
-    job = Job.create(title: "title", company: "company", description: desc,
-                  category: "part-time", user_id: User.last.id)
+    # desc = "This is a description.  This is a description.  This is a description.  
+    #         This is a description.  This is a description.  This is a description.  
+    #         This is a description.  This is a description.  This is a description."
+    # job = Job.create(title: "title", company: "company", description: desc,
+    #               category: "part-time", user_id: User.last.id)
     
+    job = Job.new(FactoryGirl.attributes_for(:part_time_job))
+    job[:user_id] = user.id
+    job.save
+
     app = { application_text: "An application", job_id: job.id }
     
     email = UserAppMailer.apply_email(app, user).deliver_now
