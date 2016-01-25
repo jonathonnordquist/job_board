@@ -3,10 +3,10 @@ Job Board Project
 
 Another Rails exercise, this time I built a basic job board application.  Users
 can create and edit an account, log in and out, create and post jobs and logged
-in users can apply for jobs.  There is no function Built over a three day period
-from 11-30 to 12-2 2015.  Currently this is very bare bones, a site like this could
-have an enormous number of features.  At a later date a basic suite of tests using 
-the RSpec framework was added.
+in users can apply for jobs.  Built over a three day period from 11-30 to 12-2 
+2015.  Currently this is very bare bones, a site like this could have an enormous 
+number of features.  At a later date a basic suite of tests using the RSpec 
+framework was added.
 
 To get this up and running
 --------------------------

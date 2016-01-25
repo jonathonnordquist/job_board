@@ -4,25 +4,30 @@ class JobsController < ApplicationController
   layout "jobs"
   
   def index
+    @title = "All Available Jobs"
     @jobs = Job.all
   end
   
   def full_time
+    @title = "Available Full Time Jobs"
     @jobs = Job.where(category: "full-time")
     render 'jobs/index'
   end
   
   def part_time
+    @title = "Available Part Time Jobs"
     @jobs = Job.where(category: "part-time")
     render 'jobs/index'
   end
   
   def contract
+    @title = "Available Contract Jobs"
     @jobs = Job.where(category: "contract")
     render 'jobs/index'
   end
   
   def free_lance
+    @title = "Available Freelance Jobs"
     @jobs = Job.where(category: "freelance")
     render 'jobs/index'
   end

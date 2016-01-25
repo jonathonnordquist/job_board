@@ -1,6 +1,6 @@
 <% provide(:title, formatted_title("All Jobs")) %>
 
-<h1>All available jobs</h1>
+<h1><%= @title %></h1>
 
 <ul id="job-list">
   <% @jobs.each do |job| %>
