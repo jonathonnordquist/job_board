@@ -8,6 +8,9 @@ in users can apply for jobs.  Built over a three day period from 11-30 to 12-2
 number of features.  At a later date a basic suite of tests using the RSpec 
 framework was added.
 
+The application is currently deployed to Heroku and can be viewed at 
+https://my-jobs-board.herokuapp.com/
+
 To get this up and running
 --------------------------
 _Note: This project was built in the Ruby development environment at https://c9.io/.
